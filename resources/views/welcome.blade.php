@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div clas="row search-box mt-2">
-            <form action="{{}}" method="GET">
+            <form action="" method="GET">
                     <div class="form-row">
                         <div class="col-12">
                             <input type="text" class="form-control" placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc">
