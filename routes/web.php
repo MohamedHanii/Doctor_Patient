@@ -3,6 +3,12 @@
 
 Route::get('/', 'AppController@viewHomePage');
 
+Route::get('/search',function(){
+    return view('search');
+});
+
+Route::post('/search','AppController@searching');
+
 Auth::routes();
 
 Route::get('/login/doctor', 'Auth\LoginController@showDoctorLoginForm')->name('login.doctor');

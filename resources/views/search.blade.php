@@ -60,8 +60,11 @@
                     <h5> Specialization <small>Result number</small></h5>
                 </div>
                 <div class="mb-2" >
+
                     <div class="card mb-3" style="width: 100%;">
+
                         <div class="row no-gutters" style=" width: 100%;">
+                            @foreach ($searchResult as $doctor)
                             <div class="col-md-3" style="  width: auto;
                             height: 100%;
                             padding-left:35px;
@@ -73,10 +76,11 @@
                                 overflow: hidden;
                                 border-radius: 50%;">
                             </div>
+
                             <div class="col-md-9">
                                 <div class="card-body">
-                                    <h5 class="card-title mb-0" >Doctor <a href="#"> Name Of Doctor</a> </h5>
-                                    <small>Specialization</small>
+                                <h5 class="card-title mb-0" >Doctor <a href="#">{{$doctor->first_name}} {{$doctor->last_name}}</a> </h5>
+                                <small>{{$doctor->specilization}}</small>
                                     <p class="card-text mt-2" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
                                         Deserunt quibusdam sequi natus adipisci, nulla in iure ut deleniti atqu
                                         e dolorum enim voluptatum magnam! Veritatis reiciendis necessitatibus dist
@@ -86,6 +90,8 @@
                                     veniet minima dicta perspiciatis soluta voluptas ullam provident optio alias?</p>
                                 </div>
                             </div>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>
