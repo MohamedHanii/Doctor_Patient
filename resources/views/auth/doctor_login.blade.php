@@ -61,8 +61,8 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-                                <a class="btn btn-primary" href="{{ route('login.doctor') }}">
-                                        {{ __('Login as a doctor') }}
+                                <a class="btn btn-primary" href="{{ route('login') }}">
+                                        {{ __('Login as a user') }}
                                 </a>
                             </div>
                         </div>
