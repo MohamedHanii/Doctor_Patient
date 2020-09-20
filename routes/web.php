@@ -13,5 +13,6 @@ Route::post('/register/doctor', 'Auth\RegisterController@createDoctor')->name('r
 
 Route::view('/home', 'home')->middleware('auth');
 Route::group(['middleware' => 'auth:doctor'], function () {
-    Route::view('/doctor', 'doctor');
+    Route::view('/doctor_profile', 'doctor_profile')->name('doctor.profile');
+
 });

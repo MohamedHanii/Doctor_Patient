@@ -46,7 +46,7 @@ class LoginController extends Controller
      */
     public function showDoctorLoginForm()
     {
-        return view('auth.login',['url' => 'doctor']);
+        return view('auth.doctor_login',['url' => 'doctor']);
     }
 
     /**
@@ -87,7 +87,7 @@ class LoginController extends Controller
     public function doctorLogin(Request $request)
     {
         if ($this->guardLogin($request, 'doctor')) {
-            return redirect()->intended('/doctor');
+            return redirect()->route('doctor.profile');
         }
 
         return back()->withInput($request->only('email', 'remember'));

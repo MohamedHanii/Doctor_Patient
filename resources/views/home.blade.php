@@ -8,7 +8,7 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                     Hi there, regular user {{Auth::user()->email}}
+                     Hi there, regular user {{Auth::user()->first_name}}
                 </div>
             </div>
         </div>
