@@ -23,24 +23,27 @@
                     </div>
                     <div class="form-row mt-3">
                         <div class="form-group col-sm-12 col-md-3">
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                            <select class="custom-select my-1 mr-sm-2" id="price-filter">
                                 <option selected>Price</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
+                                @foreach($Doctors as $key => $data)
+                                    <option value="{{$data->price}}">{{$data->price}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-sm-12 col-md-3">
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Price</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
+                            <select class="custom-select my-1 mr-sm-2" id="spec-filter">
+                                <option selected>Specilization</option>
+                                @foreach($Doctors as $key => $data)
+                                    <option value="{{$data->specilization}}">{{$data->specilization}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-sm-12 col-md-3">
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Price</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
+                            <select class="custom-select my-1 mr-sm-2" id="location-filter">
+                                <option selected>Location</option>
+                                @foreach($Doctors as $key => $data)
+                                    <option value="{{$data->location}}">{{$data->location}}</option>
+                                @endforeach
                               </select>
                         </div>
                         <div class=" col-sm-12 col-md-3">

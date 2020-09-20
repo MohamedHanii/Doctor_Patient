@@ -75,6 +75,20 @@
                             </div>
                         </div>
 
+                        
+                        <div class="form-group row">
+                            <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="price" type="number" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price" value="{{ old('price') }}" required autofocus>
+
+                                @if ($errors->has('price'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('price') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
@@ -92,7 +106,6 @@
 
                         <div class="form-group row">
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
-
                             <div class="col-md-6">
                                 <input id="phone" type="number" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required autofocus>
 
