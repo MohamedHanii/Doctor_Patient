@@ -22,6 +22,7 @@ class CreateDoctorsTable extends Migration
             $table->string('location');
             $table->integer('age');
             $table->integer('phone');
+            $table->integer('price');
             $table->string('password');
             $table->boolean('is_doctor')->default(true);
             $table->rememberToken();

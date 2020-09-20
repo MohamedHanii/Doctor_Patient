@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div clas="row search-box mt-2">
-                <form action="/results" method="GET">
+            <form action="{{}}" method="GET">
                     <div class="form-row">
                         <div class="col-12">
                             <input type="text" class="form-control" placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc">
@@ -23,24 +23,27 @@
                     </div>
                     <div class="form-row mt-3">
                         <div class="form-group col-sm-12 col-md-3">
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                            <select class="custom-select my-1 mr-sm-2" id="price-filter">
                                 <option selected>Price</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
+                                @foreach($prices as  $price)
+                                    <option value="{{$price}}">{{$price}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-sm-12 col-md-3">
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Price</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
+                            <select class="custom-select my-1 mr-sm-2" id="spec-filter">
+                                <option selected>Specilization</option>
+                                @foreach($specs as $key => $spec)
+                                    <option value="{{$spec}}">{{$spec}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-sm-12 col-md-3">
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Price</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
+                            <select class="custom-select my-1 mr-sm-2" id="location-filter">
+                                <option selected>Location</option>
+                                @foreach($locations as $location)
+                                    <option value="{{$location}}">{{$location}}</option>
+                                @endforeach
                               </select>
                         </div>
                         <div class=" col-sm-12 col-md-3">

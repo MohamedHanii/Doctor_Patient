@@ -1,5 +1,7 @@
 <?php
-Route::view('/', 'welcome');
+
+
+Route::get('/', 'AppController@viewHomePage');
 
 Auth::routes();
 
