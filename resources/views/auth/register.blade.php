@@ -109,6 +109,50 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="gender" type="radio" class="" name="gender" value="male" required autofocus> Male
+                                <br>
+                                <input id="gender" type="radio" class="" name="gender" value="female" required autofocus> Female
+                                @if ($errors->has('gender'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="diseases" class="col-md-4 col-form-label text-md-right">{{ __('What is your chronic diseases?') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea id="diseases"  class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="diseases" rows="6" cols="50" required autofocus>
+                                </textarea>
+                                @if ($errors->has('diseases'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('diseases') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="surgery" class="col-md-4 col-form-label text-md-right">{{ __('Have you had surgery before?') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea id="surgery"  class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="surgery" rows="6" cols="50" required autofocus>
+                                </textarea>
+                                @if ($errors->has('surgery'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('surgery') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
