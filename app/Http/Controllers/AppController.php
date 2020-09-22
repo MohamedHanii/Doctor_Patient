@@ -41,4 +41,12 @@ class AppController extends Controller
             //     echo $request->spec_filter,"\n";
             return view('search',['searchResult'=>$doctors]);
     }
+
+
+    public function showingResult(Request $request){
+
+        $query = $request->input("query");
+        $doctors = Doctor::where('first_name','like',"%$query%")->paginate(1);
+        return view('search')->with('searchResult',$doctors);
+    }
 }
