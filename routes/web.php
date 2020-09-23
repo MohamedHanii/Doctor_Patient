@@ -11,10 +11,10 @@ Auth::routes();
 
 Route::get('/result',"AppController@showingResult")->name('result');
 
-Route::get('/search',function(){
-    return view('search');
-});
-Route::post('/search','AppController@searching');
+// Route::get('/search',function(){
+//     return view('search');
+// });
+// Route::post('/search','AppController@searching');
 
 Route::get('/login/doctor', 'Auth\LoginController@showDoctorLoginForm')->name('login.doctor');
 Route::get('/register/doctor', 'Auth\RegisterController@showDoctorRegisterForm')->name('register.doctor');

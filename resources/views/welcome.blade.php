@@ -15,11 +15,11 @@
                 </div>
             </div>
             <div clas="row search-box mt-2">
-            <form action="/search" method="POST">
+            <form action="/result" method="GET">
                 {{ csrf_field() }}
                     <div class="form-row">
                         <div class="col-12">
-                            <input type="text" class="form-control" placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc">
+                            <input name="query" id= "query" type="text" class="form-control" placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc">
                         </div>
                     </div>
                     <div class="form-row mt-3">

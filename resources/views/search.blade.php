@@ -99,7 +99,18 @@
 
         <div class="row">
             <div class="col col-lg-2" style="background-color: grey;">
-                <h1> filter div</h1>
+                <div style="background-color:blue">
+                    <p> Filters </p>
+                </div>
+                <div style="background-color: white">
+                    <div>
+                        <button>Gender</button>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="col col-lg-10 pl-4 pr-0 " style=" width:100%; background-color: green">
                 
