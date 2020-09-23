@@ -1,15 +1,15 @@
 <?php
 
 
+
+
 Route::get('/', 'AppController@viewHomePage');
-
-
-
+Route::get('/result',"AppController@showingResult")->name('result');
 
 
 Auth::routes();
 
-Route::get('/result',"AppController@showingResult")->name('result');
+
 
 // Route::get('/search',function(){
 //     return view('search');
@@ -22,7 +22,9 @@ Route::get('/register/doctor', 'Auth\RegisterController@showDoctorRegisterForm')
 Route::post('/login/doctor', 'Auth\LoginController@doctorLogin');
 Route::post('/register/doctor', 'Auth\RegisterController@createDoctor')->name('register.doctor');
 
+
 Route::view('/home', 'home')->middleware('auth');
+
 Route::group(['middleware' => 'auth:doctor'], function () {
     Route::view('/doctor_profile', 'doctor_profile')->name('doctor.profile');
 
