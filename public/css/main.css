@@ -1,4 +1,10 @@
 
+h1{
+    color:#f1f3f8;
+}
+ .banner-header p{
+    color:#393b44;
+}
 @media (min-width: 992px){
     .empty-space.col-md-b100 {
         height: 100px;
@@ -29,6 +35,9 @@
     }
 }
 
+.navbar-toggler-icon {
+    background-image: url("https://www.flaticon.com/svg/static/icons/svg/1320/1320259.svg")!important;
+}
 
 .col-xs-b30 {
     margin-bottom: 30px;
@@ -59,18 +68,25 @@
     margin-bottom: 0;
 }
 .section-search{
-    background: #f9f9f9 url(https://images.unsplash.com/photo-1442033025416-c6a7da752d71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1959&q=80) no-repeat bottom center;
+    background: #f9f9f9 url('/images/Medical05.jpg') no-repeat  center;
     object-fit: cover;
     background-blend-mode: Darken;
-    padding:170px 0px;
+    padding:250px 0px;
+    margin-top: -70px;
 }
 .banner-wrapper{
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
 }
-.search-btn{
+button.search-btn{
     width:100%;
+    background-color:#e8505b;
+    color:#f1f3f8 ;
+    font-weight: 800;
+}
+button.search-btn:hover{
+    color: #f9d56e;
 }
 .tm-icon-box{
     padding-left: 65px;
@@ -81,7 +97,7 @@
     left: 15px;
     top: 3px;
     font-size: 36px;
-    color: #2caee2;
+    color: #14b1ab;
 }
 .tm-icon-box-title{
     font-size: 24px;
@@ -118,12 +134,28 @@
 }
 
 /* Navbar */
-.nav-style{
+.transparent{
+    position: fixed;
+    top: 0;
+    transition:500ms ease;
+    transition: background-color 200ms linear;
+}
+
+nav.navbar{
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+}
+nav.navbar.navbar-fixed-top{
+    transition:500ms ease;
     background-color: #14b1ab;
-    position: fixed;  
+    position: fixed;
     top: 0;
     width: 100%;
     opacity: 1;
+    transition: background-color 200ms linear;
     z-index: 2;
 }
 
@@ -146,7 +178,7 @@
 /* Footer */
 
 footer{
-    background-color: #33383c;
+    background-color: #14b1ab;
     padding:30px 0px;
 }	       
 

@@ -41,7 +41,7 @@
                         <input name="query" id= "query" type="text" class="form-control my-1 mr-sm-2" value="{{request()->query('query')}}" placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc" >
                         </div>
                         <div class="">
-                            <button type="submit" class="btn btn-primary search-btn  my-1 mr-sm-2"><i class="fas fa-search"></i> Search</button>
+                            <button type="submit" class="btn btn-primary search-btn  my-1 mr-sm-2">Search</button>
                         </div>
                     </div>
                 </form>

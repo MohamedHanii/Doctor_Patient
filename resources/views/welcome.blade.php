@@ -48,7 +48,7 @@
                               </select>
                         </div>
                         <div class=" col-sm-12 col-md-3">
-                            <button type="submit" class="btn btn-primary search-btn  my-1 mr-sm-2"><i class="fas fa-search"></i> Search</button>
+                            <button type="submit" class="btn search-btn  my-1 mr-sm-2">Search</button>
                         </div>
                     </div>
                 </form>
@@ -142,11 +142,8 @@
                 </div>
               </div>
             </div>
-            
           </div>
     </div>
-
-
 </section>
 
 
