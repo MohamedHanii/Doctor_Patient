@@ -55,7 +55,7 @@ class AppController extends Controller
         ->orWhere('specilization','=',$request->spec_filter)
         ->orWhere('first_name','like',"%$query%")
         ->orWhere('last_name','like',"%$query%")
-        ->paginate(1);
+        ->paginate(10);
 
         return view('search')->with('searchResult',$doctors);
     }
