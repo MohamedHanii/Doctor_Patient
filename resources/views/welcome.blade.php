@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div clas="row search-box mt-2">
-            <form action="/result" method="GET">
+            <form action="{{route('result')}}" method="GET">
                 {{ csrf_field() }}
                     <div class="form-row">
                         <div class="col-12">

@@ -56,7 +56,11 @@ class AppController extends Controller
         ->orWhere('first_name','like',"%$query%")
         ->orWhere('last_name','like',"%$query%")
         ->paginate(10);
-
         return view('search')->with('searchResult',$doctors);
     }
+
+    public function filter(Request $request){
+
+    }
+
 }

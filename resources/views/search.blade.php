@@ -54,61 +54,116 @@
 <div class="container-fluid">
         <div class="row">
             <div  id = "sticky" class="col-2 pt-3">
-                <div class="div-border filter-div ">
-                    <p class="m-0"> Filter By </p>
-                </div>
-                <div>
-                    <div class="div-border">
-                        <p class="filter-text m-0">Gender</p>
-                        <hr class="m-0 hr-color">
-                        <div class="pl-3 pt-3">
-                            <div class="checkbox">
-                                <label><input type="checkbox" value=""> Male</label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value=""> Female</label>
+            <form action="{{route('result')}}" method="GET">
+                    <div class="div-border filter-div ">
+                        <p class="m-0"> Filter By </p>
+                    </div>
+                    <div>
+                        <div class="div-border">
+                            <p class="filter-text m-0">Gender</p>
+                            <hr class="m-0 hr-color">
+                            <div class="pl-3 pt-3 pb-2">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="male">
+                                    <label class="form-check-label" for="male">
+                                        Male
+                                    </label>
+                                  </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="female">
+                                    <label class="form-check-label" for="female">
+                                        Female
+                                    </label>
+                                  </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="div-border">
-                        <p class="filter-text m-0">Title</p>
-                        <hr class="m-0 hr-color">
-                        <div class="pl-3 pt-3">
-                            <div class="checkbox">
-                                <label><input type="checkbox" value=""> Professor</label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value=""> Lecturer</label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value=""> Consultant</label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value=""> Specialist</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="div-border">
-                        <p class="filter-text m-0">Availability</p>
-                        <hr class="m-0 hr-color">
-                        <div class="pl-3 pt-3">
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="">  Any Day</label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value=""> Today</label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" value=""> Tomorrow</label>
+                        <div class="div-border">
+                            <p class="filter-text m-0">Title</p>
+                            <hr class="m-0 hr-color">
+                            <div class="pl-3 pt-3 pb-2">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="professor">
+                                    <label class="form-check-label" for="professor">
+                                        Professor
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="lecturer">
+                                    <label class="form-check-label" for="lecturer">
+                                        Lecturer
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="consultant">
+                                    <label class="form-check-label" for="consultant">
+                                        Consultant
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="specialist">
+                                    <label class="form-check-label" for="specialist">
+                                        Specialist
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="div-border">
+                            <p class="filter-text m-0">Availability</p>
+                            <hr class="m-0 hr-color">
+                            <div class="pl-3 pt-3 pb-2">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="anyday">
+                                    <label class="form-check-label" for="anyday">
+                                        Any Day
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="today">
+                                    <label class="form-check-label" for="today">
+                                        Today
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="tomorrow">
+                                    <label class="form-check-label" for="tomorrow">
+                                        Tomorrow
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="div-border">
+                            <p class="filter-text m-0">Availability</p>
+                            <hr class="m-0 hr-color">
+                            <div class="pl-3 pt-3 pb-2">
+                                <div class="form-check mb-2">
+                                    <input id="price1" type="checkbox" name="price[twenty]" class="form-check-input" value="20" onChange="this.form.submit()" {{ request()->filled('category_id.samsung') ? 'checked' :''}}>
+                                    <label class="form-check-label" for="price1">
+                                        20
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" name="price[]" value="100" id="price2">
+                                    <label class="form-check-label" for="price2">
+                                        100
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" name="price[]" value="20" id="price1">
+                                    <label class="form-check-label" for="price1">
+                                        300
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger"> Filter </button>
+                    </form>
                 </div>
             </div>
 
 
             <div class="col-10 pl-4">
-                <div class="p-3 pr-2 pl-2 pt-5">
+                <div class="p-3 pr-2 pl-2 pt-4">
                     <h5> {{request()->spec_filter}} <small>{{$searchResult->count()}}</small></h5>
                 </div>
                 <div class="mb-2" >
