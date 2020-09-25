@@ -15,11 +15,11 @@
                 </div>
             </div>
             <div clas="row search-box mt-2">
-            <form action="/search" method="POST">
+            <form action="{{route('result')}}" method="GET">
                 {{ csrf_field() }}
                     <div class="form-row">
                         <div class="col-12">
-                            <input type="text" class="form-control" placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc">
+                            <input name="query" id= "query" type="text" class="form-control" placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc">
                         </div>
                     </div>
                     <div class="form-row mt-3">
@@ -48,7 +48,7 @@
                               </select>
                         </div>
                         <div class=" col-sm-12 col-md-3">
-                            <button type="submit" class="btn btn-primary search-btn  my-1 mr-sm-2"><i class="fas fa-search"></i> Search</button>
+                            <button type="submit" class="btn search-btn  my-1 mr-sm-2">Search</button>
                         </div>
                     </div>
                 </form>
@@ -142,11 +142,8 @@
                 </div>
               </div>
             </div>
-            
           </div>
     </div>
-
-
 </section>
 
 

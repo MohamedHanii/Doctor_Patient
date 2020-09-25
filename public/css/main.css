@@ -1,4 +1,10 @@
 
+h1{
+    color:#f1f3f8;
+}
+ .banner-header p{
+    color:#393b44;
+}
 @media (min-width: 992px){
     .empty-space.col-md-b100 {
         height: 100px;
@@ -24,8 +30,14 @@
     .col-md-b60 {
         margin-bottom: 60px;
     }
+    .section-search{
+        padding: 200px 0;
+    }
 }
 
+.navbar-toggler-icon {
+    background-image: url("https://www.flaticon.com/svg/static/icons/svg/1320/1320259.svg")!important;
+}
 
 .col-xs-b30 {
     margin-bottom: 30px;
@@ -56,18 +68,25 @@
     margin-bottom: 0;
 }
 .section-search{
-    background: #f9f9f9 url(https://images.unsplash.com/photo-1442033025416-c6a7da752d71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1959&q=80) no-repeat bottom center;
+    background: #f9f9f9 url('/images/Medical05.jpg') no-repeat  center;
     object-fit: cover;
     background-blend-mode: Darken;
-    padding:140px 0px;
+    padding:250px 0px;
+    margin-top: -70px;
 }
 .banner-wrapper{
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
 }
-.search-btn{
+button.search-btn{
     width:100%;
+    background-color:#e8505b;
+    color:#f1f3f8 ;
+    font-weight: 800;
+}
+button.search-btn:hover{
+    color: #f9d56e;
 }
 .tm-icon-box{
     padding-left: 65px;
@@ -78,7 +97,7 @@
     left: 15px;
     top: 3px;
     font-size: 36px;
-    color: #2caee2;
+    color: #14b1ab;
 }
 .tm-icon-box-title{
     font-size: 24px;
@@ -113,10 +132,53 @@
     font-size: 2em;
     text-shadow: -2em 0, -1em 0, 1em 0, 2em 0;
 }
+
+/* Navbar */
+.transparent{
+    position: fixed;
+    top: 0;
+    transition:500ms ease;
+    transition: background-color 200ms linear;
+}
+
+nav.navbar{
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+}
+nav.navbar.navbar-fixed-top{
+    transition:500ms ease;
+    background-color: #14b1ab;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 1;
+    transition: background-color 200ms linear;
+    z-index: 2;
+}
+
+.text-color{
+    color: #f3ecc2;
+    font-size: 17px;
+}
+.text-color:hover{
+    color:#f9d56e;
+}
+
+.navbar-brand{
+    font-size: 23px;
+}
+
+/*End of Navbar*/
+
+
+
 /* Footer */
 
 footer{
-    background-color: #33383c;
+    background-color: #14b1ab;
     padding:30px 0px;
 }	       
 
@@ -173,4 +235,64 @@ footer{
 }
 .darken-grey-text {
     color: #2E2E2E;
+}
+
+
+.div-border{
+    border: #14b1ab 0.5px solid;
+    background-color: white;
+}
+
+#sticky{
+    position: sticky;
+    position: -webkit-sticky;
+    height: 100%;
+    left:0;
+    top:70px;
+    
+}
+.upper-div{
+    background: #f9f9f9 url('/images/Medical05.jpg') no-repeat top   center;
+    object-fit: cover;
+    background-blend-mode: Darken;
+    padding-top:180px ;
+    padding-bottom: 50px;
+}
+.filter-div{
+    background-color: #14b1ab;
+    color: #f3ecc2;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px 12px;
+}
+.filter-text{
+    color: #14b1ab;
+    font-size: 16px;
+    padding: 8px 12px;
+}
+
+.hr-color{
+    color: #14b1ab;
+    background-color: #14b1ab;
+}
+.doc-img{    
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.location-icon{
+    background-image: url("https://www.flaticon.com/svg/static/icons/svg/1001/1001022.svg")!important;
+   
+}
+.colorize-icon{
+    color: #da3e44;
+}
+.img-div{
+    width: auto!important;
+    height: 100%;
+    padding-left:35px!important;
+
+    padding-top: 15px;
+    padding-bottom:15px;
 }

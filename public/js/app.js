@@ -49469,3 +49469,31 @@ if (false) {
 
 /***/ })
 /******/ ]);
+
+$(window).scroll(function () {
+	if ($(window).scrollTop() >= 70) {
+		$('.navbar').addClass('navbar-fixed-top');
+		$('.navbar').removeClass('transparent');
+	} else {
+		if(document.getElementById('hamBtn').classList.contains('collapsed')){
+			$('.navbar').addClass('transparent');
+			$('.navbar').removeClass('navbar-fixed-top');
+		}
+	}
+	});
+
+	$(".navbar-toggler").click(function () {
+		var bol = document.getElementById("myNav").classList.contains('transparent');
+		if ($(window).scrollTop() < 70 && bol) {
+			$('.navbar').removeClass('transparent');
+			$('.navbar').addClass('navbar-fixed-top');
+		}else{
+			$('.navbar').addClass('transparent');
+			$('.navbar').removeClass('navbar-fixed-top');
+		}
+		if ($(window).scrollTop() >= 70) {
+			$('.navbar').removeClass('transparent');
+			$('.navbar').addClass('navbar-fixed-top');
+		}
+
+		})
