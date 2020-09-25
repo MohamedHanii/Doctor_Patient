@@ -23,6 +23,9 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('is_doctor')->nullable()->default(false);
+            $table->boolean('gender')->default(true);
+            $table->string('diseases');
+            $table->string('surgery');
             $table->rememberToken();
             $table->timestamps();
         });

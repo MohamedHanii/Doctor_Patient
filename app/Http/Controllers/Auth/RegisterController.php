@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Doctor;
+use App\Schedule;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -80,6 +81,9 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'gender' => $data['gender'] == 'male'? true : false,
+            'diseases' => $data['diseases'],
+            'surgery' => $data['surgery']
         ]);
     }
 
@@ -91,7 +95,7 @@ class RegisterController extends Controller
     protected function createDoctor(Request $request)
     {
         $this->validator($request->all())->validate();
-        Doctor::create([
+        $doctor = Doctor::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'age' => $request->age,
@@ -100,8 +104,20 @@ class RegisterController extends Controller
             'location' => $request->location,
             'price'=> $request->price,
             'email' => $request->email,
+            'gender' => $request->gender == 'male'? true : false,
             'password' => Hash::make($request->password),
         ]);
+
+        $schedule = Schedule::create([
+            'doctor_id' => $doctor->id,
+            'hours_from' => $request->hours_from,
+            'hours_to' => $request->hours_to,
+        ]);
+        
+        foreach($request->appointment as $date){
+            $schedule->$date = true;
+        }
+        $schedule->save();
         return redirect()->intended('login/doctor');
     }
 }
