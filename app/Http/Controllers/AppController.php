@@ -9,7 +9,7 @@ use App\Doctor;
 class AppController extends Controller
 {
 
-    public function viewHomePage(){
+    public function searchItems(){
         $Doctors = Doctor::all();
 
         $locations = array();
@@ -21,29 +21,27 @@ class AppController extends Controller
             $specs[]=$doctor->specilization;
             $prices[]=$doctor->price;
         }
+
         $locations=array_unique($locations);
         $specs=array_unique($specs);
         $prices=array_unique($prices);
-
-        return view('welcome',['locations'=>$locations,'specs'=>$specs,'prices'=>$prices]);
+        sort($prices);
+        sort($locations);
+        sort($specs);
+        return [$locations,$specs,$prices];
     }
 
-    // public function searching(Request $request){
-    //     $doctors = Doctor::where('price','=',$request->price_filter)
-    //         ->orWhere('location','=',$request->location_filter)
-    //         ->orWhere('specilization','=',$request->spec_filter)
-    //         ->get();
-    //         // foreach($doctors as $doctor){
-    //         //     echo $doctor->email,"\n";
-    //         // }
-    //         //     echo $request->price_filter,"\n";
-    //         //     echo $request->location_filter,"\n";
-    //         //     echo $request->spec_filter,"\n";
-    //         return view('search',['searchResult'=>$doctors]);
-    // }
+    public function viewHomePage(){
+        $data = AppController::searchItems();
+
+        return view('welcome',['locations'=>$data[0],'specs'=>$data[1],'prices'=>$data[2]]);
+    }
+
 
 
     public function showingResult(Request $request){
+
+        $data = AppController::searchItems();
 
         $query = $request->input("query");
         $price = $request->input("price_filter");
@@ -53,14 +51,23 @@ class AppController extends Controller
         $doctors = Doctor::where('price','=',$request->price_filter)
         ->orWhere('location','=',$request->location_filter)
         ->orWhere('specilization','=',$request->spec_filter)
-        ->orWhere('first_name','like',"%$query%")
-        ->orWhere('last_name','like',"%$query%")
-        ->paginate(10);
-        return view('search')->with('searchResult',$doctors);
-    }
+        ->orWhere('first_name','like',"%$query%");
 
-    public function filter(Request $request){
+        if ($request->has('price')) {
+            $doctors->whereIn('price', $request->price);
+        }
+        if ($request->has('title')) {
+            //
+        }
+        if ($request->has('available')) {
+            //
+        }
+        $doctors =  $doctors->paginate(10);
+  
+        return view('search')->with(['searchResult'=>$doctors ,'locations'=>$data[0],'specs'=>$data[1],'prices'=>$data[2]]);
+    } 
 
-    }
+
+
 
 }

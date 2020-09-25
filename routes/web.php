@@ -8,6 +8,7 @@ Route::get('/result',"AppController@showingResult")->name('result');
 
 
 
+
 Auth::routes();
 
 Route::get('/login/doctor', 'Auth\LoginController@showDoctorLoginForm')->name('login.doctor');

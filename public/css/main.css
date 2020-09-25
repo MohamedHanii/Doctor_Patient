@@ -279,11 +279,7 @@ footer{
     width: 150px;
     height: 150px;
     overflow: hidden;
-    padding-top:10px ;
     border-radius: 50%;
-    display:block;
-    margin:auto;
-
 }
 .location-icon{
     background-image: url("https://www.flaticon.com/svg/static/icons/svg/1001/1001022.svg")!important;
@@ -291,4 +287,12 @@ footer{
 }
 .colorize-icon{
     color: #da3e44;
+}
+.img-div{
+    width: auto!important;
+    height: 100%;
+    padding-left:35px!important;
+
+    padding-top: 15px;
+    padding-bottom:15px;
 }
